@@ -1,13 +1,18 @@
-import './App.css'
+import styles from './app.module.css';
+import { Header } from './components/header';
 
-function App() {
-
-  return (
-    <>
-    <h1>Hello World</h1>
-    <button>teste</button>
-    </>
-  )
+function handleRestartGame() {
+  alert("Reiniciar o jogo")
 }
 
-export default App
+function App() {
+  return (
+    <div className={styles.container}>
+      <main>
+        <Header current={5} max={10} onRestart={handleRestartGame} />
+      </main>
+    </div>
+  );
+}
+
+export default App;
